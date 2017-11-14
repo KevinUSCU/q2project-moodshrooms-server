@@ -38,8 +38,8 @@ if (environment === 'development') {
 // Routes
 const { PartsRouter, ShroomsRouter, UsersRouter } = require('./routes')
 app.use('/parts', PartsRouter)
-app.use('/shrooms', ShroomsRouter)
-app.use('/users', UsersRouter)
+// app.use('/shrooms', ShroomsRouter)
+// app.use('/users', UsersRouter)
 
 app.use((err, req, res, next) => {
   const status = err.status || 500
