@@ -1,0 +1,33 @@
+{
+  "name": "q2project-moodshrooms-server",
+  "version": "0.0.1",
+  "description": "Moodshrooms server application.",
+  "main": "app.js",
+  "scripts": {
+    "test": "none",
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "knex": "knex"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinUSCU/q2project-moodshrooms-server.git"
+  },
+  "author": "Kevin Springer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevinUSCU/q2project-moodshrooms-server/issues"
+  },
+  "homepage": "https://github.com/KevinUSCU/q2project-moodshrooms-server#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "knex": "^0.14.0",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.0"
+  }
+}
