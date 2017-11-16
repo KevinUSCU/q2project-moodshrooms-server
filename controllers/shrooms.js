@@ -42,7 +42,15 @@ function attachParts(shroom) {
     })
 }
 
+function createShroom(req, res, next) {
+  console.log(req.body)
+  const { owner_id, name, cap, base, mouth, eyes, eyeballs, eyebrows, flourish, cap_color_1, cap_color_2 } = req.body
+  Shroom.createShroom(owner_id, name, cap, base, mouth, eyes, eyeballs, eyebrows, flourish, cap_color_1, cap_color_2)
+  .then(result => res.status(201).json({ id: result[0].id }))
+}
+
 module.exports = {
   get,
-  getShroom
+  getShroom,
+  createShroom
 }
