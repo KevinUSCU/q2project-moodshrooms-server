@@ -1,7 +1,7 @@
 exports.seed = function(knex, Promise) {
   // Inserts shroom parts; this will be used for dev *and* production setup
   return knex('shroom_parts').insert([
-    { id: 1, description: 'None', type: 'none', path: '' },
+    { id: 1, description: 'None', type: 'none', path: 'images/shroom-parts/blank.png' },
     { id: 2, description: 'Legs', type: 'base', path: 'images/shroom-parts/base_001.png' },
     { id: 3, description: 'Thin', type: 'base', path: 'images/shroom-parts/base_002.png' },
     { id: 4, description: 'Wide', type: 'base', path: 'images/shroom-parts/base_003.png' },
