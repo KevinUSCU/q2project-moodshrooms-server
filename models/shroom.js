@@ -13,7 +13,7 @@ function getShroom(id) {
 function createShroom(owner_id, name, cap, base, mouth, eyes, eyeballs, eyebrows, flourish, cap_color_1, cap_color_2) {
   return knex('shrooms')
   .insert({ owner_id, name, cap, base, mouth, eyes, eyeballs, eyebrows, flourish, cap_color_1, cap_color_2 })
-  .returning('id')
+  .returning(['id'])
 }
 
 module.exports = {
