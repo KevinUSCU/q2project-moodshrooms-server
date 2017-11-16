@@ -4,6 +4,11 @@ function get() {
   return knex('shrooms')
 }
 
+function getAllOwnedByUser(owner_id) {
+  return knex('shrooms')
+  .where({ owner_id })
+}
+
 function getShroom(id) {
   return knex('shrooms')
   .where({ id })
