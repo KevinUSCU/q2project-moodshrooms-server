@@ -9,6 +9,12 @@ function getAllOwnedByUser(owner_id) {
   .where({ owner_id })
 }
 
+function getAllSharedWithUser(user_id) {
+  return knex('shared_shrooms')
+  .where({ user_id })
+  .join('shrooms', 'shroom_id', 'shrooms.id')
+}
+
 function getShroom(id) {
   return knex('shrooms')
   .where({ id })
@@ -37,6 +43,8 @@ function deleteShroom(id) {
 module.exports = {
   get,
   getShroom,
+  getAllOwnedByUser,
+  getAllSharedWithUser,
   createShroom,
   updateShroom,
   deleteShroom

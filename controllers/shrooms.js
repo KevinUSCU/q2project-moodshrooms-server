@@ -1,14 +1,17 @@
 const { Shroom, Part } = require('../models')
 
 function get (req, res, next) {
-  // Use query string ?user=[user_id] to get all shrooms owned by user
-  const user = req.query.user
-  if (user) {
-    return Shroom.getAllOwnedByUser(user)
-    .then(shrooms => {
-      if (shrooms.length > 0) res.json(shrooms)
-      else next({ status: 404, error: `Error 404: ${user} is not a valid user!` })
-    })
+  // Use query string ?owner=[user_id] to get all shrooms owned by user
+  // Use query string ?shared=[user_id] to get all shrooms shared with user
+  const owner = req.query.owner
+  const shared = req.query.shared
+  if (owner) {
+    return Shroom.getAllOwnedByUser(owner)
+    .then(shrooms => res.json(shrooms))
+  }
+  if (shared) {
+    return Shroom.getAllSharedWithUser(shared)
+    .then(shrooms => res.json(shrooms))
   }
   Shroom.get()
   .then(shrooms => res.json(shrooms))
