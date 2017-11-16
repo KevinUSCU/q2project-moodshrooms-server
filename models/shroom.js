@@ -16,8 +16,23 @@ function createShroom(owner_id, name, cap, base, mouth, eyes, eyeballs, eyebrows
   .returning(['id'])
 }
 
+function updateShroom(id, owner_id, name, cap, base, mouth, eyes, eyeballs, eyebrows, flourish, cap_color_1, cap_color_2) {
+  return knex('shrooms')
+  .where({ id })
+  .update({ owner_id, name, cap, base, mouth, eyes, eyeballs, eyebrows, flourish, cap_color_1, cap_color_2, thisKeyIsSkipped: undefined })
+  .returning(['name'])
+}
+
+function deleteShroom(id) {
+  return knex('shrooms')
+  .where({ id })
+  .del()
+}
+
 module.exports = {
   get,
   getShroom,
-  createShroom
+  createShroom,
+  updateShroom,
+  deleteShroom
 }
