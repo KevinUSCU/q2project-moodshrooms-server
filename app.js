@@ -19,12 +19,12 @@ if (environment === 'development') {
   }  
 } else {
   var corsOptions = {
-    origin: 'https://kevin-q2prj-moodshrooms-client.surge.sh',
+    origin: 'http://kevin-q2prj-moodshrooms-client.surge.sh',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
   }
 }
-// app.use(cors(corsOptions))
-app.use(cors())
+app.use(cors(corsOptions))
+// app.use(cors())
 
 // Set up Body-Parser
 const bodyParser = require('body-parser')
