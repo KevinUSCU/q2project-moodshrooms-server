@@ -7,7 +7,7 @@ function get (req, res, next) {
     return Part.getType(type)
     .then(parts => {
       if (parts.length > 0) res.json(parts)
-      else next({ status: 404, error: `${type} is not a moodshroom part type!`})
+      else next({ status: 404, error: `${type} is not a moodshroom part type!` })
     })
   }
   Part.get()
