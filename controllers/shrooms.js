@@ -1,4 +1,4 @@
-const { Shroom, Part } = require('../models')
+const { Shroom, Part, Shared } = require('../models')
 
 function get (req, res, next) {
   // Use query string ?owner=[user_id] to get all shrooms owned by user
@@ -39,7 +39,8 @@ function updateShroom(req, res, next) {
 }
 
 function deleteShroom(req, res, next) {
-  Shroom.deleteShroom(req.params.id)
+  Shared.deleteShared(req.params.id)
+  .then(result => Shroom.deleteShroom(req.params.id))
   .then(result => res.status(204).send())
 }
 
