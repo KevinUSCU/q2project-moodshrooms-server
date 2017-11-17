@@ -19,7 +19,7 @@ if (environment === 'development') {
   }  
 } else {
   var corsOptions = {
-    origin: 'http://kevin-q2prj-moodshrooms-client.surge.sh',
+    origin: 'https://kevin-q2prj-moodshrooms-client.surge.sh',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
   }
 }
