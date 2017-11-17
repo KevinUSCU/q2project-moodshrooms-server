@@ -15,19 +15,19 @@ function verifyUserByUsername(req, res, next) {
   const key = req.body.key
   User.getUserByUsername(username)
   .then(user => {
-    if (!user) return next({ status: 404, error: `Error 404: That's not a valid user!` })
-    if (key !== user.key) return next({ status: 403, error: `Error 403: Key is incorrect.` })
+    if (!user) return next({ status: 404, error: `That's not a valid user!` })
+    if (key !== user.key) return next({ status: 403, error: `Key is incorrect.` })
     return res.status(200).json(user.id)
   })
 }
 
 function createUser(req, res, next) {
   const { username, key } = req.body
-  if (!username) return next({ status: 400, error: `Error 400: You must supply a username` })
-  if (!key) return next({ status: 400, error: `Error 400: You must provide a key.` })
+  if (!username) return next({ status: 400, error: `You must supply a username` })
+  if (!key) return next({ status: 400, error: `You must provide a key.` })
   User.getUserByUsername(username)
   .then(user => {
-    if (user) return next({ status: 409, error: `Error 409: A user with that username already exists.` })
+    if (user) return next({ status: 409, error: `A user with that username already exists.` })
     User.createUser(username, key)
     .then(result => res.status(201).json({ id: result[0].id }))
   })
