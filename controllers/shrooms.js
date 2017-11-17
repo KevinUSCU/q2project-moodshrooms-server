@@ -21,7 +21,7 @@ function getShroom (req, res, next) {
   const id = req.params.id
   Shroom.getShroom(id)
   .then(shroom => {
-    if (!shroom) return next({ status: 404, error: `Error 404: That's not a valid moodshroom!` })
+    if (!shroom) return next({ status: 404, error: `That's not a valid moodshroom!` })
     return res.json(shroom)
   })
 }

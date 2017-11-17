@@ -47,7 +47,7 @@ app.use((err, req, res, next) => {
 })
 
 app.use((req, res, next) => {
-  res.status(404).json({ error: `Error 404: This doesn't exist in Shroomland.` })
+  res.status(404).json({ error: `This doesn't exist in Shroomland.` })
 })
 
 // Listener
