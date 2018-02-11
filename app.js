@@ -19,7 +19,7 @@ if (environment === 'development') {
   }  
 } else {
   var corsOptions = {
-    origin: 'https://kevinuscu-moodshrooms-client.surge.sh',
+    origin: ['https://kevinuscu-moodshrooms-client.surge.sh', 'https://kevinuscu-personal-project-site.surge.sh'],
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
   }
 }
